@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# 使用Cursor-small 开发一个 Trello Board
+> 拖动卡片的没有问题，但是拖动清单遇到问题了；
+而且这个问题cursor修不了；
+大概有思路修，但是有点折腾，相当于这个项目需要重新做一遍；
+虽然重做一遍项目其实花的时间也不会太多；
+所以问题大概就在这了，对人来说，大范围的局部修改是可行的，但是对于小模型，能处理的上下文始终是有限的；
+所以只能把大项目分割成一个个局部模型；
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+一个简单的 Trello 风格的看板应用，使用 React 和 `react-beautiful-dnd` 实现拖放功能。
 
-## Available Scripts
+## 目录
 
-In the project directory, you can run:
+- [功能](#功能)
+- [技术栈](#技术栈)
+- [安装与运行](#安装与运行)
+- [使用](#使用)
+- [部署](#部署)
+- [贡献](#贡献)
+- [许可证](#许可证)
 
-### `npm start`
+## 功能
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 创建、删除和拖动清单
+- 在清单中添加、删除和拖动卡片
+- 响应式设计，适用于不同屏幕尺寸
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 技术栈
 
-### `npm test`
+- [React](https://reactjs.org/)
+- [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd)
+- [react-icons](https://react-icons.github.io/react-icons/)
+- [CSS](https://www.w3schools.com/css/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 安装与运行
 
-### `npm run build`
+1. 克隆这个仓库：
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   git clone https://github.com/<username>/trello-board.git
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. 进入项目目录：
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   cd trello-board
+   ```
 
-### `npm run eject`
+3. 安装依赖：
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. 启动开发服务器：
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   npm start
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5. 在浏览器中访问 `http://localhost:3000` 查看应用。
 
-## Learn More
+## 使用
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- 点击“添加清单”按钮创建新的清单。
+- 点击清单顶部的拖拽图标来拖动清单。
+- 在清单中点击“添加卡片”按钮来添加新的卡片。
+- 拖动卡片以重新排序。
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 部署
 
-### Code Splitting
+要将应用程序部署到 GitHub Pages，请按照以下步骤操作：
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. 确保已安装 `gh-pages` 包：
 
-### Analyzing the Bundle Size
+   ```bash
+   npm install gh-pages --save-dev
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. 在 `package.json` 中添加 `homepage` 字段：
 
-### Making a Progressive Web App
+   ```json
+   "homepage": "https://<username>.github.io/trello-board"
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3. 运行以下命令进行部署：
 
-### Advanced Configuration
+   ```bash
+   npm run deploy
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 贡献
 
-### Deployment
+欢迎任何形式的贡献！请遵循以下步骤：
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Fork 这个仓库。
+2. 创建你的特性分支 (`git checkout -b feature/YourFeature`)。
+3. 提交你的更改 (`git commit -m 'Add some feature'`)。
+4. 推送到分支 (`git push origin feature/YourFeature`)。
+5. 创建一个新的 Pull Request。
 
-### `npm run build` fails to minify
+## 许可证
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+该项目使用 MIT 许可证。有关详细信息，请参阅 [LICENSE](LICENSE) 文件。
